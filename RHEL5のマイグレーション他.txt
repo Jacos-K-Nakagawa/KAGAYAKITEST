@@ -1,0 +1,14 @@
+RedHatからCentOSへのマイグレーション
+
+cp /etc/redhat-release /etc/redhat-release-saved
+rpm -e --nodeps redhat-release-notes redhat-release yum-rhn-plugin redhat-logos
+rpm -ivh ftp://ftp.iij.ad.jp/pub/linux/centos/5/os/i386/CentOS/centos-release-5-11.el5.centos.i386.rpm ftp://ftp.iij.ad.jp/pub/linux/centos/5/os/i386/CentOS/centos-release-notes-5.11-0.i386.rpm ftp://ftp.iij.ad.jp/pub/linux/centos/5/os/i386/CentOS/redhat-logos-4.9.99-11.el5.centos.noarch.rpm
+yum update -y
+
+AWS Cliのセットアップ
+yum install epel-release -y
+yum install python26 -y
+curl -O https://bootstrap.pypa.io/get-pip.py
+python26 get-pip.py 
+pip install awscli
+
